@@ -1,4 +1,4 @@
-import { IsEnum, IsNumber, Length } from 'class-validator';
+import { IsEnum, IsNumber, Length } from 'class-validator'
 
 export enum Sex {
   male = 0,
@@ -8,11 +8,11 @@ export enum Sex {
 
 export class CreateUserDto {
   @Length(3, 10)
-  username: string;
+  username: string
 
   @IsNumber()
-  age: number;
+  age: number
 
   @IsEnum(Sex)
-  sex: Sex;
+  sex: Sex
 }
