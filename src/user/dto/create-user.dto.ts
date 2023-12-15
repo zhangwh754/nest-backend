@@ -1,18 +1,10 @@
-import { IsEnum, IsNumber, Length } from 'class-validator'
-
-export enum Sex {
-  male = 0,
-  female,
-  unknown = 99,
-}
+import { IsEmail, IsOptional, Length } from 'class-validator'
 
 export class CreateUserDto {
   @Length(3, 10)
-  username: string
+  @IsOptional()
+  name: string
 
-  @IsNumber()
-  age: number
-
-  @IsEnum(Sex)
-  sex: Sex
+  @IsEmail()
+  email: string
 }
